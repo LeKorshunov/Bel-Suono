@@ -1,0 +1,12 @@
+{% extends "base.twig" %}
+
+{% block main %}
+	
+	{% do action('elementor/page_templates/header-footer/before_content') %}
+	
+	{% do action('timber/elementor/template-header-footer/content') %}
+	
+	{% do action('elementor/page_templates/header-footer/after_content') %}
+
+{% endblock %}
+

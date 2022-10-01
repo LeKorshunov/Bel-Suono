@@ -1,0 +1,819 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<main class="belsu-main bel-main">
+	<div class="belsu-main-wrap bel-main-w" style="height: auto;">
+		{% block main_content %}
+			{# Hero #}
+			<div class="belsu-main-item bel-main-i">
+				<section class="belsu-section  bel-section">
+					<div class="belsu-section-wrap bel-section-w">
+						<div class="belsu-section-item _zero bel-section-i">
+						{#<span class="date-event">30 сентября</span>
+						<span class="name-event">День музыки</span>#}
+							{#<img class="radio-monte-carlo-logo" src="/wp-content/themes/belsuono21/assets_3/monte-carlo-logo-5.png" alt="Radio Monte Carlo">#}
+							<div class="belsu-hero _home">
+								<div class="belsu-hero-wrap">
+								<div class="belsu-hero-item">
+										<div class="belsu-heading _hero">
+											<div class="belsu-heading-wrap">
+												<div class="belsu-heading-item">
+
+
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+
+
+									{#<span class="hall-event">Большой Зал Консерватории</span>#}
+									<div class="belsu-hero-item">
+										<div class="button-container-desktop">
+											<div class="belsu-button-buy" id="buyticket">
+
+												<div class="belsu-button-wrap bel-button-w">
+
+													<div class="belsu-button-item bel-button-i">
+														<a
+																href="###"
+																onclick="isClickBtn()">
+															Купить билет
+
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<!--<div class="belsu-hero-item">
+
+										<div class="belsu-lang _hero">
+											<div class="belsu-lang-wrap">
+												<div class="belsu-lang-item"><a href="#ru">ru</a></div>
+												<div class="belsu-lang-item"><a href="#eng">eng</a></div>
+											</div>
+										</div>
+
+									</div>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			{# Announce #}
+<div class="bel-main-i">
+				<section class="bel-section announce">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+						<div class="belsu-section-wrap bel-section-w">
+							<div class="bel-heading _section _light _video">
+								<div class="bel-heading-w">
+									<div class="bel-heading-ann" id="event"><h2>О концерте</h2></div>
+								</div>
+							</div>
+							<p class="bel-ann">Фортепианное трио Bel Suono вновь выступит в ММДМ с праздничной программой в канун Рождества и Нового года! Обещаем, волшебную атмосферу приближающегося праздника в этот вечер ощутит каждый зритель в зале!</p>
+							<p class="bel-ann">Рождественский концерт Bel Suono в Светлановском зале уже стал доброй традицией. Его программа как всегда будет многогранна: от Чайковского и Вивальди до Фрэнка Синатры, от страстного «Bésame Mucho» до музыки из к/ф «Ирония судьбы» и «Карнавальная ночь». А также будет много музыкальных подарков, приготовленных специально для этого концерта!</p>
+
+						</div>
+					</div>
+				</section>
+			</div>
+			{# Afisha #}
+			<!--
+			<div class="bel-main-i">
+				<section class="bel-section _poster">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+
+							<div class="bel-heading _section _light">
+								<div class="bel-heading-w">
+									<div class="bel-heading-i"><h2>{{ _e('Афиша', 'bel21') }}</h2></div>
+								</div>
+							</div>
+
+							<div class="bel-calendar _poster">
+								<div class="bel-calendar-w">
+									<div class="bel-calendar-i">
+
+										{% set last_year = null %}
+										{% set last_month = null %}
+
+										{% for i in calendar_items %}
+											{# Item #}
+											{% set ev_date_raw = i.event_date_raw %}
+											{% set ev_year = i.event_date_raw|date('Y') %}
+											{% set ev_month = i.event_date_raw|date('n') %}
+
+											{% if last_year != ev_year %}
+												<div class="bel-text _calendar-year -alt _light">
+													<div class="bel-text-w">
+														<div class="bel-text-i">
+															<p>{{ ev_year }}</p>
+														</div>
+													</div>
+												</div>
+											{% endif %}
+
+											{% if last_month != ev_month %}
+												<div class="bel-text _calendar-month _light">
+													<div class="bel-text-w">
+														<div class="bel-text-i">
+															<p>{{ ev_date_raw|date('F') }}</p>
+														</div>
+													</div>
+												</div>
+											{% endif %}
+
+											<div class="bel-list _calendar">
+												<div class="bel-list-w">
+													<div class="bel-list-i">
+														<div class="bel-text _calendar-list _light">
+															<div class="bel-text-w">
+																<div class="bel-text-i"><p>
+																			<span>
+																				{{ ev_date_raw|date('j F') }}
+																			</span>
+																		{{ i.title }}
+																	</p>
+																</div>
+															</div>
+														</div>
+														{% if i.sell-link %}
+
+														<div class="bel-button _calendar-list _small _light">
+															<div class="bel-button-w">
+																<div class="bel-button-i">
+
+																	<a href="{{ i.sell-link }}">Купить билет</a>
+																</div>
+															</div>
+														</div>
+														{% endif %}
+													</div>
+												</div>
+											</div>
+											{# /Item #}
+
+											{% set last_year = ev_year %}
+											{% set last_month = ev_month %}
+										{% endfor %}
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bel-bgimg"
+					     style="background-image: url({{ theme.uri }}/assets/image/bg-1.jpg)"></div>
+				</section>
+			</div>
+			-->
+			 <div class="bel-main-i">
+                    <section class="bel-section _poster">
+                        <div class="bel-section-w">
+                            <div class="bel-section-i">
+                                <div class="bel-heading _section _light _home-poster">
+                                    <div class="bel-heading-w">
+                                        <div class="bel-heading-i">
+
+                                            <h2>Афиша</h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bel-calendar _poster _home">
+                                    <div class="bel-calendar-w">
+                                        <div class="bel-calendar-i">
+                                            <div class="bel-text _calendar-year -alt _light">
+                                                <div class="bel-text-w">
+                                                    <div class="bel-text-i">
+
+                                                        <p>Ближайшие концерты 2022</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bel-node _calendar">
+                                                <div class="bel-node-w">
+                                                    <div class="bel-node-i">
+                                                        <div class="bel-text _calendar-month _light">
+                                                            <div class="bel-text-w">
+                                                                <div class="bel-text-i">
+
+                                                                    <p>Сентябрь</p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bel-list _calendar">
+                                                            <div class="bel-list-w">
+                                                                <div class="bel-list-i">
+                                                                    <div class="bel-text _calendar-list _light">
+                                                                        <div class="bel-text-w">
+                                                                            <div class="bel-text-i">
+
+                                                                                <p>
+                                                                                    <span>30 сентября</span>
+
+																					Москва, Большой Зал Консерватории
+
+                                                                                </p>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="bel-button _calendar-list _small _light">
+                                                                        <div class="bel-button-w">
+                                                                            <div class="bel-button-i sale-msk">
+
+                                                                                <a href="#" onclick="isClickBtn()">Купить билет</a>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                               <!-- <div class="bel-list-i">
+                                                                    <div class="bel-text _calendar-list _light">
+                                                                        <div class="bel-text-w">
+                                                                            <div class="bel-text-i">
+
+                                                                                <p>
+                                                                                    <span>28 мая</span>
+
+																					Ереван, Концертный зал им. Арама Хачатуряна
+
+                                                                                </p>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="bel-button _calendar-list _small _light">
+                                                                        <div class="bel-button-w">
+                                                                            <div class="bel-button-i sale-yerevan">
+
+                                                                                <a href="https://www.tomsarkgh.am/hy/event/44806/Bel-Suono.html" target="_blank">Купить билет</a>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+																<div class="bel-text _calendar-month _light">
+																 <div class="bel-text-w">
+                                                                <div class="bel-text-i">
+
+                                                                    <p>Сентябрь</p>
+
+                                                                </div>
+                                                            </div>
+															</div>
+                                                                <div class="bel-list-i">
+                                                                    <div class="bel-text _calendar-list _light">
+                                                                        <div class="bel-text-w">
+                                                                            <div class="bel-text-i">
+
+                                                                                <p>
+                                                                                    <span>30 сентября</span>
+
+																					Москва, Большой Зал Консерватории
+
+                                                                                </p>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="bel-button _calendar-list _small _light">
+                                                                        <div class="bel-button-w">
+                                                                            <div class="bel-button-i">
+
+                                                                                <a href="https://msk.kassir.ru/frame/entry/index?key=a7f1f00d-64ad-f920-f470-417485b938f6&type=E&id=1523408" target="_blank"
+																				onclick="return window.kassirWidget.summon({
+																						width: 960,
+																						url: 'https://msk.kassir.ru/frame/entry/index?key=a7f1f00d-64ad-f920-f470-417485b938f6&type=E&id=1523408'
+																					})">Купить билет</a>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>	-->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="bel-button _home-afisha _light">
+									<div class="bel-button-w">
+										<div class="bel-button-i">
+
+											<a href="/calendar">Посмотреть всю афишу</a>
+										</div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                        <div class="bel-bgimg "  style="background-image: url({{ theme.uri }}/assets/image/bg-1.jpg)"></div>
+                    </section>
+                </div>
+				{# Videos #}
+			<div class="bel-main-i">
+				<section class="bel-section _events-gallery _video">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							<div class="bel-heading _section _light _video">
+								<div class="bel-heading-w">
+									<div class="bel-heading-i"><h2>Видеоклипы</h2></div>
+								</div>
+							</div>
+							<div class="bel-gallery _video" id="video">
+								<div class="bel-gallery-w">
+
+																		<div class="bel-gallery-i">
+											<a href="https://www.youtube.com/embed/lFxj67RtaSk" data-fslightbox="gallery">
+												<img src="https://belsuono.ru/wp-content/uploads/2018/07/video-2-1-1.jpg" alt="">
+											</a>
+											<span>Bel Suono &#8212; Антонио Вивальди. Лето. (Official Video 2018)</span>
+										</div>
+																		<div class="bel-gallery-i">
+											<a href="https://www.youtube.com/watch?v=XnARrbP9aXI" data-fslightbox="gallery">
+												<img src="https://belsuono.ru/wp-content/uploads/2021/08/maxresdefault.jpg" alt="">
+											</a>
+											<span>Bel Suono &#8212; Времена года. Осень (А. Вивальди)</span>
+										</div>
+																			<div class="bel-gallery-i">
+											<a href="https://www.youtube.com/watch?v=O8kQvqVRkwU" data-fslightbox="gallery">
+												<img src="https://belsuono.ru/wp-content/uploads/2021/08/BKZ_0001_IMG_4359-min.jpg" alt="">
+											</a>
+											<span>Bel Suono &#8212; Serenity / Безмятежность</span>
+										</div>
+																			<div class="bel-gallery-i">
+											<a href="https://www.youtube.com/watch?v=BMjkaRGgy3k" data-fslightbox="gallery">
+												<img src="https://belsuono.ru/wp-content/uploads/2021/08/upload.jpg" alt="">
+											</a>
+											<span>Bel Suono &#038; Ансамбль им. Александрова – Калинка-Малинка</span>
+										</div>
+																			<div class="bel-gallery-i">
+											<a href="https://www.youtube.com/watch?v=_oZgtiBq19M&feature=youtu.be" data-fslightbox="gallery">
+												<img src="https://belsuono.ru/wp-content/uploads/2020/01/Снимок-экрана-2019-12-29-в-12.00.59.jpg" alt="">
+											</a>
+											<span>Bel Souno &#8212; В пещере горного короля</span>
+										</div>
+																			<div class="bel-gallery-i">
+											<a href="https://www.youtube.com/watch?v=A6AJEVkiJTY&feature=youtu.be" data-fslightbox="gallery">
+												<img src="https://belsuono.ru/wp-content/uploads/2019/08/IMG_5549.jpg" alt="">
+											</a>
+											<span>Bel Suono &#038; Todes <br> Por una Cabeza/El Choclo</span>
+										</div>
+																			<div class="bel-gallery-i">
+											<a href="https://www.youtube.com/watch?v=TEjnBWXodVw&feature=youtu.be" data-fslightbox="gallery">
+												<img src="https://belsuono.ru/wp-content/uploads/2022/03/img_4672.jpg" alt="">
+											</a>
+											<span>А. Вивальди «Зима»</span>
+										</div>
+
+								</div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div>
+						</div>
+					</div>
+					<div class="bel-bgimg"
+					     style="background-image: url({{ theme.uri }}/assets/image/bg-2.jpg)"></div>
+				</section>
+			</div>
+				<div class="bel-main-i">
+				<section class="bel-section _organizers">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							<div class="bel-heading _light _section">
+								<div class="bel-heading-w">
+									<div class="bel-heading-i">
+
+										<h1>Организаторам</h1>
+
+									</div>
+								</div>
+							</div>
+							<div class="bel-node _organizers-list">
+								<div class="bel-node-w">
+									<div class="bel-node-i">
+										<div class="bel-text _light _organizers-list-title">
+											<div class="bel-text-w">
+												<div class="bel-text-i">
+													<p>
+
+														Фортепианное трио Bel Suono выступает в нескольких форматах
+
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bel-node-i">
+										<div class="bel-list _organizers-list">
+											<div class="bel-list-w">
+												<div class="bel-list-i">
+													<div class="bel-image _organizers-list-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/organizers/of-icon-1.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-text _light _organizers-list-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	Сольно
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-list-i">
+													<div class="bel-image _organizers-list-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/organizers/of-icon-2.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-text _light _organizers-list-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	В сопровождении собственного бэнда (бас-гитара,
+																	ударник, клавиши)
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-list-i">
+													<div class="bel-image _organizers-list-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/organizers/of-icon-3.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-text _light _organizers-list-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	В сопровождении <br> оркестра
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="bel-node _organizers-list -alt">
+								<div class="bel-node-w">
+
+								</div>
+							</div>
+							<div class="bel-text _light _organizers-notice">
+								<div class="bel-text-w">
+									<div class="bel-text-i">
+										<p>
+
+											Мы стремимся к идеальному звучанию для наших слушателей. С этой целью был создан список оптимального оборудования для выступлений во всех представленных форматах.
+
+										</p>
+									</div>
+									<div class="bel-button _home-afisha _light">
+									<div class="bel-button-w">
+										<div class="bel-button-i">
+
+											<a href="/organizers">Технический райдер</a>
+										</div>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bel-bgimg"
+					     style="background-image: url({{ theme.uri }}/assets/image/bg-org-1.jpg)"></div>
+				</section>
+</div>
+				<div class="bel-main-i">
+				<section class="bel-section _interview">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							<div class="bel-heading _section _interview">
+								<div class="bel-heading-w">
+									<div class="bel-heading-i"><h2 id="gallery">Блиц-интервью<br>с солистами<br>Bel Suono</h2></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bel-bgimg _light-glow _interview"
+					     style="background-image: url({{ theme.uri }}/assets/image/bg-interview.jpg)"></div>
+				</section>
+			</div>
+			<div class="bel-main-i">
+				<section class="bel-section _interview">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							<div class="bel-list _interview-list">
+								<div class="bel-list-w">
+									<div class="bel-list-i">
+										<div class="bel-heading _interview-list-heading">
+											<div class="bel-heading-w">
+												<div class="bel-heading-i">
+													<h2>Где вы родились?<br>Расскажите о себе и своих родителях.</h2>
+												</div>
+											</div>
+										</div>
+										<div class="bel-node _interview-list-artist -one">
+											<div class="bel-node-w">
+												<div class="bel-node-i">
+													<div class="bel-image _interview-list-image">
+														<div class="bel-image-w">
+															<div class="bel-image-i"><img
+																		src="{{ theme.uri }}/assets/image/interview-1.png" alt=""></div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-node-i">
+													<div class="bel-text _interview-list-text -alt">
+														<div class="bel-text-w">
+															<div class="bel-text-i"><p><span>Никита Хабин </span>Я родился
+																	в поселке Сурменевский, в Челябинской области. Мои
+																	родители – экономисты по образованию, всю жизнь живут и
+																	работают на селе.</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="bel-node _interview-list-artist -two">
+											<div class="bel-node-w">
+												<div class="bel-node-i">
+													<div class="bel-image _interview-list-image">
+														<div class="bel-image-w">
+															<div class="bel-image-i"><img
+																		src="{{ theme.uri }}/assets/image/interview-2.png" alt=""></div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-node-i">
+													<div class="bel-text _interview-list-text -alt">
+														<div class="bel-text-w">
+															<div class="bel-text-i"><p><span>Кирилл Гущин </span>Я
+																	родился в Энгельсе, городе, известном своими
+																	троллейбусами и тем, что в его окрестностях приземлился
+																	Гагарин. Мои родители – инженеры с высшим техническим
+																	образованием, работают по специальности.</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="bel-node _interview-list-artist -three">
+											<div class="bel-node-w">
+												<div class="bel-node-i">
+													<div class="bel-image _interview-list-image">
+														<div class="bel-image-w">
+															<div class="bel-image-i"><img
+																		src="{{ theme.uri }}/assets/image/interview-3.png" alt=""></div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-node-i">
+													<div class="bel-text _interview-list-text -alt">
+														<div class="bel-text-w">
+															<div class="bel-text-i"><p><span>Антон Мосенков </span>Я
+																	родился и вырос в Москве, моя мама<br>–
+																	экономист-аналитик, а папа<br>– военнослужащий.</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="belsu-button _hero" style="margin-bottom:20px;">
+					<div class="belsu-button-wrap">
+						<div class="belsu-button-item">
+							<a href="https://belsuono.ru/they/">Читать полностью</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{# Albums #}
+			<div class="belsu-main-item bel-main-i">
+				<section id="music" class="belsu-section _music bel-section">
+					<div class="belsu-section-wrap bel-section-w">
+						<div class="belsu-section-item bel-section-i">
+							<div class="swiper">
+								<div class="swiper-wrapper">
+
+									{% for i in albums %}
+										<div class="swiper-slide">
+											<div class="belsu-hero _home _music">
+												<div class="belsu-hero-wrap">
+													<div class="belsu-hero-item">
+														<div class="belsu-image _music">
+															<div class="belsu-image-wrap">
+																<div class="belsu-image-item">
+																	<img src="{{ Image(i.poster).src }}" alt="">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="belsu-hero-item">
+														<div>{{ i.title }}<br><br><br><br></div>
+													</div>
+													<div class="belsu-hero-item">
+
+														{% if i.link_buy %}
+															<div class="belsu-button _hero _music">
+																<div class="belsu-button-wrap">
+																	<div class="belsu-button-item">
+																		<a target="_blank" href="{{ i.link_buy }}">Купить CD</a>
+																	</div>
+																</div>
+															</div>
+														{% endif %}
+
+														{% if i.link_listen %}
+															<div class="belsu-button _hero _music isBandLinks">
+																<div class="belsu-button-wrap">
+																	<div class="belsu-button-item">
+																		<a href="{{ i.link_listen }}">Слушать</a>
+																		<div class="bel-band" title="Послушай">
+																			<div class="bel-band-cont">
+																				<div class="bel-band-wrap">
+																					<div class="bel-band-link _apple" style="background-image: url({{ theme.uri }}/assets/image/icons/apple.svg);">
+																						<a target="_blank" href="{{i.link_itunes}}"></a>
+																					</div>
+																					<div class="bel-band-link _yandex" style="background-image: url({{ theme.uri }}/assets/image/icons/yandex.svg);">
+																						<a target="_blank" href="{{i.link_ya_music}}"></a>
+																					</div>
+																					<div class="bel-band-link _spotify" style="background-image: url({{ theme.uri }}/assets/image/icons/spotify.svg);">
+																						<a target="_blank" href="{{i.link_spotify}}"></a>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+                                                        	</div>
+														{% endif %}
+													</div>
+												</div>
+											</div>
+										</div>
+									{% endfor %}
+
+								</div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			{# Contacts #}
+			<div class="belsu-main-item bel-main-i">
+				<section class="bel-section _contacts">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							<div class="bel-heading _section _light">
+								<div class="bel-heading-w">
+									<div class="bel-heading-i"><h2>Контакты</h2></div>
+								</div>
+							</div>
+							<div class="bel-contacts _two _one _contacts">
+								<div class="bel-contacts-w">
+									<div class="bel-contacts-i">
+										<div class="bel-text _contacts _light">
+											<div class="bel-text-w">
+												<div class="bel-text-i"><p>Продюсер Bel Suono:<br>Фаттахова Лейла
+													</p>
+													<p>Email: <a href="mailto:9031546@mail.ru">9031546@mail.ru</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bel-contacts-i">
+										<div class="bel-text _contacts _light">
+											<div class="bel-text-w">
+												<div class="bel-text-i"><p>Организация гастролей<br>по РФ и СНГ:<br>Алексей
+														Мичуров</p>
+													<p>Тел: <a href="tel:+79221117836">+7 (922) 111-78-36</a><br>Email:
+														<a href="mailto:gamepress@mail.ru">gamepress@mail.ru</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="bel-contacts-i">
+										<div class="bel-text _contacts _light">
+											<div class="bel-text-w">
+												<div class="bel-text-i"><p>Ассистент Продюсера:<br>Алина Кузнецова
+													</p>
+													<p>Тел: <a href="tel:+79259107505">+7 (925) 910-75-05</a><br>Email:
+														<a href="mailto:lina.belsuono@mail.ru">lina.belsuono@mail.ru</a></p>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="social-buttons _center">
+
+    <a href="https://www.youtube.com/user/BELSUONOPIANO" target="_blank"><i class="fa fa-youtube"></i></a>
+    <a href="https://ok.ru/group/61063988445326" target="_blank"><i class="fa fa-odnoklassniki"></i></a>
+    <a href="https://music.apple.com/ru/artist/bel-suono/475708266" target="_blank"><i class="fa fa-apple"></i></a>
+	<a href="https://vk.com/belsuono" target="_blank"><i class="fa fa-vk"></i></a>
+								<a href="https://t.me/belsuono" target="_blank"><i class="fa fa-paper-plane"></i></a>
+								<a href="https://zen.yandex.ru/belsuono" target="_blank"><img src="https://belsuono.ru/wp-content/uploads/2022/03/social-zen.png"></a>
+								<a href="https://music.yandex.ru/artist/593942" target="_blank"><i class="fa fa-music"></i></a>
+
+				</div>
+						</div>
+					</div>
+					<div class="bel-bgimg"
+					     style="background-image: url({{ theme.uri }}/assets/image/bg-1.jpg)"></div>
+				</section>
+			</div>
+		{% endblock %}
+	</div>
+</main>
+
+	<style>
+		.radio-monte-carlo-logo {
+			margin: 0 auto;
+			width: 120px
+		}
+
+		/*header.belsu-header {
+			-webkit-box-shadow: -0.52083vw 0.52083vw 0.78125vw -0.52083vw rgb(34 60 80 / 50%);
+			box-shadow: -0.52083vw 0.52083vw 0.78125vw -0.52083vw rgb(34 60 80 / 50%);
+			background-color: #fff;
+
+		}
+
+		@media (max-width: 493px) {
+
+			._zero {
+				background-size: contain;
+				background-repeat: no-repeat;
+    			background-position: center;
+			}
+		}*/
+		.button-container-desktop {
+			display: flex;
+			align-items: flex-end;
+			padding-top: 180px;
+		}
+		@media (max-width: 480px) {
+			.belsu-button-buy {
+				margin-top: 100%;
+			}
+			._home {
+				min-height: 450px;
+			}
+			.button-container-desktop {
+				padding-top: 250px;
+			}
+		}
+
+	</style>
+
+{% endblock %}

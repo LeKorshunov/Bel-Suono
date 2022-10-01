@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+{% block header %}
+	{% if not do_location('header') %}
+		{% include 'common/header-two.twig' %}
+	{% endif %}
+{% endblock %}
+{% block main %}
+
+	<main class="bel-main">
+		<div class="bel-main-w">
+			<div class="bel-main-i">
+				<section class="bel-section _page">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							
+								<h1>{{ post.title }}</h1>
+
+								{# Это вместо post.content, нужно для нормально интеграции с элементором #}
+								{# inc/elementor/elementor.php #}
+								{% do action('timber/elementor/do_location_fallback') %}
+						
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		
+	</main>
+
+{% endblock %}

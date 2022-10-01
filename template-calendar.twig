@@ -1,0 +1,113 @@
+{% extends "base.twig" %}
+{% block header %}
+	{% if not do_location('header') %}
+		{% include 'common/header-two.twig' %}
+	{% endif %}
+{% endblock %}
+{% block main %}
+	<main class="bel-main">
+		<div class="bel-main-w">
+			<div class="bel-main-i">
+
+				<section class="bel-section _poster">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+
+							{# Heading #}
+							<div class="bel-heading _section _light">
+								<div class="bel-heading-w">
+									<div class="bel-heading-i"><h1>{{ _e('Афиша', 'bel21') }}</h1></div>
+								</div>
+							</div>
+
+							{# Items #}
+							<div class="bel-calendar _poster">
+								<div class="bel-calendar-w">
+									<div class="bel-calendar-i">
+
+										{% set last_year = null %}
+										{% set last_month = null %}
+
+										{% for i in calendar_items %}
+											{# Item #}
+											{% set ev_date_raw = i.event_date_raw %}
+											{% set ev_year = i.event_date_raw|date('Y') %}
+											{% set ev_month = i.event_date_raw|date('n') %}
+
+											{% if last_year != ev_year %}
+												<div class="bel-text _calendar-year _light">
+													<div class="bel-text-w">
+														<div class="bel-text-i">
+															<p>{{ ev_year }}</p>
+														</div>
+													</div>
+												</div>
+											{% endif %}
+
+											{% if last_month != ev_month %}
+												<div class="bel-text _calendar-month _light">
+													<div class="bel-text-w">
+														<div class="bel-text-i">
+															<p>{{ ev_date_raw|date('F') }}</p>
+														</div>
+													</div>
+												</div>
+											{% endif %}
+
+											<div class="bel-list _calendar">
+												<div class="bel-list-w">
+													<div class="bel-list-i">
+														<div class="bel-text _calendar-list _light">
+															<div class="bel-text-w">
+																<div class="bel-text-i"><p>
+																			<span>
+																				{{ ev_date_raw|date('j F') }}
+																			</span>
+																		{{ i.title }}
+																	</p>
+																</div>
+															</div>
+														</div>
+														{% if i.get_field('sell-link') %}
+															<div class="bel-button _calendar-list _small _light">
+																<div class="bel-button-w">
+																	<div class="bel-button-i">
+																		<a 
+																			target="_blank"
+																			href="{{ i.get_field('sell-link') }}"
+																			{% if i.get_field('sell-event') %}
+																			onclick="return window.kassirWidget.summon({
+																				width: 960,
+																				url: '{{ i.get_field('sell-event')}}'
+																			})"
+																			{% endif %}
+																			>
+																			Купить билет
+																		</a>
+																	</div>
+																</div>
+															</div>
+														{% endif %}
+													</div>
+												</div>
+											</div>
+											{# /Item #}
+
+											{% set last_year = ev_year %}
+											{% set last_month = ev_month %}
+										{% endfor %}
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+			</div>
+		</div>
+		<div class="bel-bgimg _grayscale" style="background-image: url({{ theme.uri }}/assets/image/bg-afisha.jpg)"></div>
+	</main>
+{% endblock %}
+

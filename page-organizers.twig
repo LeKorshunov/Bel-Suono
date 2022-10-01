@@ -1,0 +1,564 @@
+{% extends "base.twig" %}
+{% block header %}
+	{% if not do_location('header') %}
+		{% include 'common/header-two.twig' %}
+	{% endif %}
+{% endblock %}
+{% block main %}
+
+	<main class="bel-main">
+		<div class="bel-main-w">
+			<div class="bel-main-i">
+				<section class="bel-section _organizers">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							<div class="bel-heading _light _section">
+								<div class="bel-heading-w">
+									<div class="bel-heading-i">
+
+										<h1>Организаторам</h1>
+
+									</div>
+								</div>
+							</div>
+							<div class="bel-node _organizers-list">
+								<div class="bel-node-w">
+									<div class="bel-node-i">
+										<div class="bel-text _light _organizers-list-title">
+											<div class="bel-text-w">
+												<div class="bel-text-i">
+													<p>
+
+														Фортепианное трио Bel Suono выступает в нескольких форматах
+
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bel-node-i">
+										<div class="bel-list _organizers-list">
+											<div class="bel-list-w">
+												<div class="bel-list-i">
+													<div class="bel-image _organizers-list-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/organizers/of-icon-1.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-text _light _organizers-list-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	Сольно
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-list-i">
+													<div class="bel-image _organizers-list-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/organizers/of-icon-2.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-text _light _organizers-list-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	В сопровождении собственного бэнда (бас-гитара,
+																	ударник, клавиши)
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-list-i">
+													<div class="bel-image _organizers-list-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/organizers/of-icon-3.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-text _light _organizers-list-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	В сопровождении <br> оркестра
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="bel-node _organizers-list -alt">
+								<div class="bel-node-w">
+									<div class="bel-node-i">
+										<div class="bel-text _light _organizers-list-title">
+											<div class="bel-text-w">
+												<div class="bel-text-i">
+													<p>
+
+														Инструменты
+
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bel-node-i">
+										<div class="bel-list _organizers-list -alt">
+											<div class="bel-list-w">
+												<div class="bel-list-i">
+													<div class="bel-image _organizers-list-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/organizers/oi-icon-1.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-text _light _organizers-list-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+
+																	3 цифровых <br> концертных рояля
+
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-list-i">
+													<div class="bel-image _organizers-list-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/organizers/oi-icon-2.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-text _light _organizers-list-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+
+																	3 акустических рояля <br> в хорошем состоянии <br>
+																	(требуется настройщик)
+
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="bel-text _light _organizers-notice">
+								<div class="bel-text-w">
+									<div class="bel-text-i">
+										<p>
+
+											Если мероприятие проводится в Москве или в пределах 2.000 км на территории
+											России, мы привозим свои цифровые рояли по договоренности с организатором на
+											собственном автомобиле.
+
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bel-bgimg"
+					     style="background-image: url({{ theme.uri }}/assets/image/bg-org-1.jpg)"></div>
+				</section>
+			</div>
+			<div class="bel-main-i">
+				<section class="bel-section _technodogs">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							<div class="bel-heading _section">
+								<div class="bel-heading-w">
+									<div class="bel-heading-i">
+
+										<h2>Технический <br> райдер</h2>
+
+									</div>
+								</div>
+							</div>
+							<div class="bel-list _technodogs-list">
+								<div class="bel-list-w">
+									<div class="bel-list-i">
+										<div class="bel-card _technodogs-card">
+											<div class="bel-card-w">
+												<div class="bel-card-i">
+													<div class="bel-image _technodogs-card-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-1.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-text _technodogs-card-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	Звуковой райдер
+																	для электронных
+																	роялей
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-button _extra-small _technodogs-card-button">
+														<div class="bel-button-w">
+															<div class="bel-button-i">
+
+																<a target="_blank" href="https://docs.google.com/document/d/1dWWeX9wis-0DYMpgiiXOGXO0l9QjIZI_vUcQgnOYvYM/edit">Посмотреть</a>
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-image _technodogs-card-icon -alt">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-download.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bel-list-i">
+										<div class="bel-card _technodogs-card">
+											<div class="bel-card-w">
+												<div class="bel-card-i">
+													<div class="bel-image _technodogs-card-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-2.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-text _technodogs-card-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	Звуковой райдер
+																	для электронных
+																	роялей
+																	с оркестром
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-button _extra-small _technodogs-card-button">
+														<div class="bel-button-w">
+															<div class="bel-button-i">
+
+																<a target="_blank" href="https://docs.google.com/document/d/1If7jeEzRAvAWE-wjP8Usb3xEPEl-A31ypHfFg9SBGgk/edit">Посмотреть</a>
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-image _technodogs-card-icon -alt">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-download.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bel-list-i">
+										<div class="bel-card _technodogs-card">
+											<div class="bel-card-w">											
+												<div class="bel-card-i">
+													<div class="bel-image _technodogs-card-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-3.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-text _technodogs-card-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	Звуковой райдер
+																	для электронных
+																	роялей с бэндом
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-button _extra-small _technodogs-card-button">
+														<div class="bel-button-w">
+															<div class="bel-button-i">
+
+																<a target="_blank" href="https://belsuono.ru/wp-content/uploads/2022/04/belsuono_band_electropiano_rider_2022.pdf">Посмотреть</a>
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-image _technodogs-card-icon -alt">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-download.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bel-list-i">
+										<div class="bel-card _technodogs-card">
+											<div class="bel-card-w">
+												<div class="bel-card-i">
+													<div class="bel-image _technodogs-card-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-4.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-text _technodogs-card-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+                                                                        <span>
+
+                                                                            Свет
+
+                                                                        </span>
+																</p>
+																<p>
+
+																	Световой райдер
+
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-button _extra-small _technodogs-card-button">
+														<div class="bel-button-w">
+															<div class="bel-button-i">
+
+																<a target="_blank" href="/wp-content/uploads/2021/10/BelSuono_%D1%80%D0%B0%D0%B8%CC%86%D0%B4%D0%B5%D1%80-%D0%BF%D0%BE-%D1%81%D0%B2%D0%B5%D1%82%D1%83.pdf">Посмотреть</a>
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-image _technodogs-card-icon -alt">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-download.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bel-list-i">
+										<div class="bel-card _technodogs-card">
+											<div class="bel-card-w">
+												<div class="bel-card-i">
+													<div class="bel-image _technodogs-card-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-1.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-text _technodogs-card-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+																	Звуковой райдер
+																	для акустических
+																	роялей с бэндом
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-button _extra-small _technodogs-card-button">
+														<div class="bel-button-w">
+															<div class="bel-button-i">
+
+																<a target="_blank" href="https://belsuono.ru/wp-content/uploads/2022/04/belsuono_grand_pianoband_rider_2022.pdf">Посмотреть</a>
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-image _technodogs-card-icon -alt">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-download.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bel-list-i">
+										<div class="bel-card _technodogs-card">
+											<div class="bel-card-w">
+												<div class="bel-card-i">
+													<div class="bel-image _technodogs-card-icon">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-5.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-text _technodogs-card-text">
+														<div class="bel-text-w">
+															<div class="bel-text-i">
+																<p>
+                                                                        <span>
+
+                                                                            Кофры
+
+                                                                        </span>
+																</p>
+																<p>
+
+																	Райдер
+
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="bel-card-i">
+													<div class="bel-button _extra-small _technodogs-card-button">
+														<div class="bel-button-w">
+															<div class="bel-button-i">
+
+																<a target="_blank" href="https://www.belsuono.ru/wp-content/uploads/bel_suono_kofri_2.pdf">Посмотреть</a>
+
+															</div>
+														</div>
+													</div>
+													<div class="bel-image _technodogs-card-icon -alt">
+														<div class="bel-image-w">
+															<div class="bel-image-i">
+
+																<img src="{{ theme.uri }}/assets/image/icons/techrider/tr-icon-download.png"
+																     alt="">
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+			</div>
+			<div class="bel-main-i">
+				<section class="bel-section _technodogs">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							<h3>Все вопросы по райдеру:</h3>
+							<p>Звукорежиссёр Сергей Актуш</p>
+							<p> sergey.aktush@gmail.com</p>
+							<p>+7 (909) 941-28-36</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

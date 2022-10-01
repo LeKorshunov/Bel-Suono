@@ -1,0 +1,24 @@
+{% set b_data = [
+	{l: badges.spotify, id: 'spotify', title: 'Spotify'},
+	{l: badges.apple, id: 'apple', title: 'Apple Music'},
+	{l: badges.boom, id: 'boom', title: 'BOOM'},
+	{l: badges.vk, id: 'vk', title: 'VK MUSIC'},
+	{l: badges.yandex, id: 'yandex', title: 'Яндекс.Музыка'},
+	{l: badges.youtube, id: 'youtube', title: 'Youtube Music'},
+	{l: badges.itunes, id: 'itunes', title: 'iTunes'},
+	{l: badges.tidal, id: 'tidal', title: 'Tidal'},
+	{l: badges.amazon, id: 'amazon', title: 'AMAZON'},
+] %}
+
+<div class="music-badges music-badges--align_{{ badges_alignment }}">
+	{% for i in b_data %}
+		{% if i.l %}
+			<a href="{{ i.l }}" class="music-badge music-badge--{{ i.id }} music-badge--size_{{ badges_size }}" title="{{ i.title }}" target="_blank">
+				{#			<svg preserveAspectRatio="xMinYMin meet"><use xlink:href="{{ theme.uri }}/assets/dist/spritemap.svg#sprite-itunes"></use></svg>#}
+				{#				<img src="{{ theme.uri }}/assets/img/badges/{{ i.id }}.svg" alt="">#}
+				{{ i.title }}
+			</a>
+		{% endif %}
+	{% endfor %}
+
+</div>

@@ -1,0 +1,87 @@
+{% extends "base.twig" %}
+{% block header %}
+	{% if not do_location('header') %}
+		{% include 'common/header-two.twig' %}
+	{% endif %}
+{% endblock %}
+{% block main %}
+
+	<main class="bel-main">
+		<div class="bel-main-w">
+			<div class="bel-main-i">
+				<section class="bel-section _press">
+					<div class="bel-section-w">
+						<div class="bel-section-i">
+							<div class="bel-heading _section _light">
+								<div class="bel-heading-w">
+									<div class="bel-heading-i">
+
+										<h1>Пресса</h1>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="bel-press _press">
+								<div class="bel-press-w">
+
+									{% for i in fn('get_field', 'items') %}
+										<div class="bel-press-i">
+											<div class="bel-card _press">
+												<div class="bel-card-w">
+													<div class="bel-card-i">
+														<div class="bel-image _press-card-label">
+															<div class="bel-image-w">
+																<div class="bel-image-i">
+																	<img src="{{ Image(i.image).src('large') }}" alt="">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="bel-card-i">
+														<div class="bel-text _press-card-text">
+															<div class="bel-text-w">
+																<div class="bel-text-i">
+																	<p>
+																		{{ i.preview }}
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="bel-card-i">
+														<div class="bel-button _extra-small _press-card-button ">
+															<div class="bel-button-w">
+																<div class="bel-button-i">
+
+																	<a href="{{ i.link }}">Подробнее</a>
+
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+
+							<!-- <div class="bel-button _press-load">
+								<div class="bel-button-w">
+									<div class="bel-button-i">
+
+										<a href="/">Слушать</a>
+
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="bel-bgimg _dark "  style="background-image: url({{ theme.uri }}/assets/image/bg-2.jpg)"></div>
+	</main>
+
+{% endblock %}
